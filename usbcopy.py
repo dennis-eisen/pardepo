@@ -43,7 +43,7 @@ if IS_WIN:
     FORMAT_CMD = "FORMAT {0} /FS:exFAT /V:{1} /Q /Y"
     UMOUNT_CMD = "RemoveDrive.exe {} -L"
 else:
-    FORMAT_CMD = "diskutil eraseDisk exFat {1} {0}"
+    FORMAT_CMD = "diskutil eraseDisk exFat {1} MBR {0}"
     UMOUNT_CMD = "diskutil unmountDisk {}"
 UNIX_MOUNT_ROOT = "/Volumes"  # the root of mounted volumes, typically /media on Linux and /Volumes on MacOS
 UNIX_MNT2DEV_CMD = "mount | grep -E \"{} \([0-9a-z, ]*\)\""  # command providing device info for given mount point ONLY
